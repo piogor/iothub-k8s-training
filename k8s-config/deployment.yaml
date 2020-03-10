@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iothub-demo-dave-lee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: iothub
+      dave: lee
+  template:
+    metadata:
+      labels:
+        component: iothub
+        dave: lee
+    spec:
+      containers:
+        - name: mqtt
+          image: ensaas/iothub-demo:0.8.0
+          resources:
+            limits:
+              cpu: 20m
+              memory: 64Mi
+              ephemeral-storage: 64Mi
+            requests:
+              cpu: 20m
+              memory: 64Mi
+          env:
+            - name: ENSAAS_SERVICES
+              valueFrom:
+                secretKeyRef:
+                  name: iot-home-k8s-level2-secret
+                  key: ENSAAS_SERVICES
