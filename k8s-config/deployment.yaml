@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dave-lee-iothub-k8s
+  name: iothub-k8s-dave-lee
 spec:
   replicas: 1
   selector:
