@@ -7,12 +7,12 @@ spec:
   selector:
     matchLabels:
       component: iothub
-      dave: lee
+      student: dave-lee
   template:
     metadata:
       labels:
         component: iothub
-        dave: lee
+        student: dave-lee
     spec:
       containers:
         - name: mqtt
