@@ -4,6 +4,7 @@ metadata:
   name: iothub-k8s-dave-lee
 spec:
   replicas: 1
+  revisionHistoryLimit: 0
   selector:
     matchLabels:
       component: iothub
