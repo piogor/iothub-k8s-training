@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: iothub-k8s-dave-lee
+  name: iothub-k8s-piotr-goryl
 spec:
   replicas: 1
   revisionHistoryLimit: 0
   selector:
     matchLabels:
       component: iothub
-      student: dave-lee
+      student: piotr-goryl
   template:
     metadata:
       labels:
         component: iothub
-        student: dave-lee
+        student: piotr-goryl
     spec:
       containers:
         - name: mqtt
-          image: ensaas/iothub-demo:0.8.0
+          image: piogor/iothub-exam:exam
           resources:
             limits:
               cpu: 20m
